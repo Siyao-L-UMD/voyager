@@ -90,7 +90,7 @@
     "@types/node": "^8.0.22",
     "@types/papaparse": "^5.2.5",
     "@types/react": "^15.0.8",
-    "@types/react-css-modules": "^4.6.2",
+    "@types/react-css-modules": "^4.6.3",
     "@types/react-dnd": "^2.0.32",
     "@types/react-dnd-html5-backend": "^2.1.7",
     "@types/react-dom": "^0.14.23",
