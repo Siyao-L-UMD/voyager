@@ -1,7 +1,8 @@
 /**
  * @jest-environment jsdom
  */
-import {mount} from 'enzyme';
+import {mount, configure} from 'enzyme';
+import Adapter from 'enzyme-adapter-react-15';
 import * as React from 'react';
 
 
@@ -13,6 +14,7 @@ import {App} from './app';
 
 const DEFAULT_TIMEOUT_LENGTH = 300;
 
+configure({ adapter: new Adapter() });
 describe('Voyager', () => {
   describe('instantiation via component', () => {
     it('renders voyager', done => {
