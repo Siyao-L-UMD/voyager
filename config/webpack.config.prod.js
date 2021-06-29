@@ -234,9 +234,7 @@ module.exports = {
   optimization: {
     minimizer: [new UglifyJsPlugin({
       uglifyOptions: {
-        compress: {
-          warnings: false,
-        },
+        warnings: false,
         output: {
           comments: false,
         },
