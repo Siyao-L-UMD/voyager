@@ -49,7 +49,7 @@ export interface ShelfFieldDef {
   stack?: StackOffset;
   legend?: Legend;
 
-  sort?: SortOrder | SortField<string>;
+  sort?: SortOrder | SortField;
   type?: ExpandedType;
 
   /**
