@@ -3,7 +3,7 @@ import * as React from 'react';
 import {Dispatch} from 'redux';
 import {ActionCreators} from 'redux-undo';
 import {Data} from 'vega-lite/build/src/data';
-import { FacetedCompositeUnitSpec, TopLevel } from 'vega-lite/build/src/spec';
+import { FacetedUnitSpec, TopLevel } from 'vega-lite/build/src/spec';
 import {datasetLoad, SET_APPLICATION_STATE, SET_CONFIG} from '../actions';
 import {SPEC_LOAD} from '../actions/shelf';
 import {VoyagerConfig} from '../models/config';
@@ -14,7 +14,7 @@ export interface Props extends React.Props<App> {
   config?: VoyagerConfig;
   data?: Data;
   applicationState?: Readonly<State>;
-  spec?: TopLevel<FacetedCompositeUnitSpec>;
+  spec?: TopLevel<FacetedUnitSpec>;
   filename?: string;
   dispatch: Dispatch<State>;
 }
@@ -75,7 +75,7 @@ export class App extends React.PureComponent<Props, {}> {
     });
   }
 
-  private setSpec(spec: TopLevel<FacetedCompositeUnitSpec>, filename: string) {
+  private setSpec(spec: TopLevel<FacetedUnitSpec>, filename: string) {
     if (spec.data) {
       this.setData(spec.data, filename)
         .then(
@@ -91,7 +91,7 @@ export class App extends React.PureComponent<Props, {}> {
     }
   }
 
-  private shelfSpecLoad(spec: TopLevel<FacetedCompositeUnitSpec>) {
+  private shelfSpecLoad(spec: TopLevel<FacetedUnitSpec>) {
     this.props.dispatch({
       type: SPEC_LOAD,
       payload: {

@@ -2,7 +2,7 @@ import {recommend} from 'compassql/build/src/recommend';
 import {getTopResultTreeItem} from 'compassql/build/src/result';
 import {Schema} from 'compassql/build/src/schema';
 import {isWildcard, SHORT_WILDCARD} from 'compassql/build/src/wildcard';
-import {FieldDef} from 'vega-lite/build/src/fielddef';
+import {FieldDef} from 'vega-lite/build/src/channeldef';
 import {Action} from '../../actions';
 import {
   SPEC_CLEAR, SPEC_FIELD_ADD, SPEC_FIELD_MOVE,

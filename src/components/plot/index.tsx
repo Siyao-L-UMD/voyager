@@ -3,9 +3,9 @@ import * as CopyToClipboard from 'react-copy-to-clipboard';
 import * as CSSModules from 'react-css-modules';
 import * as TetherComponent from 'react-tether';
 import {InlineData} from 'vega-lite/build/src/data';
-import {isDiscrete, isFieldDef} from 'vega-lite/build/src/fielddef';
+import {isDiscrete, isFieldDef} from 'vega-lite/build/src/channeldef';
 import {SortField, SortOrder} from 'vega-lite/build/src/sort';
-import {TopLevelFacetedUnitSpec} from 'vega-lite/build/src/spec';
+import {TopLevel, FacetedUnitSpec} from 'vega-lite/build/src/spec';
 import {BOOKMARK_MODIFY_NOTE, BookmarkAction} from '../../actions/bookmark';
 import {LogAction} from '../../actions/log';
 import {ActionHandler} from '../../actions/redux-action';
@@ -34,7 +34,7 @@ export interface PlotProps extends ActionHandler<
 
   onSort?: (channel: 'x' | 'y', sort: SortField | SortOrder) => void;
 
-  spec: TopLevelFacetedUnitSpec;
+  spec: TopLevel<FacetedUnitSpec>;
   bookmark?: Bookmark;
 
   // specified when it's in the modal

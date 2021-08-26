@@ -1,5 +1,5 @@
-import {Channel} from 'vega-lite/build/src/channel';
-import {Mark} from 'vega-lite/build/src/mark';
+import * as Channel from 'vega-lite/build/src/channel';
+import * as Mark from 'vega-lite/build/src/mark';
 
 import {SpecQueryModel} from 'compassql/build/src/model';
 import {SpecQuery} from 'compassql/build/src/query/spec';

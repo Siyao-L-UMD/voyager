@@ -1,6 +1,6 @@
 import {ExpandedType} from 'compassql/build/src/query/expandedtype';
 import {Axis} from 'vega-lite/build/src/axis';
-import {Channel} from 'vega-lite/build/src/channel';
+import * as Channel from 'vega-lite/build/src/channel';
 import {Legend} from 'vega-lite/build/src/legend';
 import {Scale} from 'vega-lite/build/src/scale';
 import {contains} from 'vega-lite/build/src/util';
@@ -116,7 +116,7 @@ export const SEQUENTIAL_COLOR_SCHEMES = ['blues', 'greens', 'greys', 'purples', 
 // Generator/Factory Methods
 // ------------------------------------------------------------------------------
 export function generatePropertyEditorSchema(prop: string, nestedProp: string, propTab: string,
-                                             fieldDef: ShelfFieldDef, channel: Channel): PropertyEditorSchema {
+                                             fieldDef: ShelfFieldDef, channel: string): PropertyEditorSchema {
   const title = generateTitle(prop, nestedProp, propTab);
   const propertyKey = nestedProp ? prop + '_' + nestedProp : prop;
   switch (prop) {
@@ -157,7 +157,7 @@ function generateLegendEditorSchema(legendProp: keyof Legend, title: string, pro
   }
 }
 
-function generateAxisEditorSchema(axisProp: keyof Axis, channel: Channel, title: string, propertyKey: string) {
+function generateAxisEditorSchema(axisProp: keyof Axis, channel: string, title: string, propertyKey: string) {
   switch (axisProp) {
     case 'orient':
       return generateSelectSchema(propertyKey, channel === 'y' ? ['left', 'right'] : ['top', 'bottom'], title);
@@ -191,7 +191,7 @@ function generateScaleEditorSchema(scaleProp: keyof Scale, scaleTypes: string[],
 }
 
 // TODO: Eventually refactor to Vega-Lite
-function getSupportedScaleTypes(channel: Channel, fieldDef: ShelfFieldDef): string[] {
+function getSupportedScaleTypes(channel: string, fieldDef: ShelfFieldDef): string[] {
   switch (fieldDef.type) {
     case ExpandedType.QUANTITATIVE:
       if (contains([Channel.X, Channel.Y], channel)) {

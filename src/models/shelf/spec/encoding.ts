@@ -4,11 +4,11 @@ import {ExpandedType} from 'compassql/build/src/query/expandedtype';
 import {isWildcard, SHORT_WILDCARD, Wildcard, WildcardProperty} from 'compassql/build/src/wildcard';
 import {Axis} from 'vega-lite/build/src/axis';
 import {Channel, NonPositionScaleChannel, PositionScaleChannel} from 'vega-lite/build/src/channel';
-import {ValueDef} from 'vega-lite/build/src/fielddef';
+import {ValueDef} from 'vega-lite/build/src/channeldef';
 import {Legend} from 'vega-lite/build/src/legend';
 import {Mark as VLMark} from 'vega-lite/build/src/mark';
 import {Scale} from 'vega-lite/build/src/scale';
-import {SortField, SortOrder} from 'vega-lite/build/src/sort';
+import {EncodingSortField, SortOrder} from 'vega-lite/build/src/sort';
 import {StackOffset} from 'vega-lite/build/src/stack';
 import {isBoolean} from 'vega-lite/build/src/util';
 import {fromFieldQueryFunctionMixins, ShelfFunction, toFieldQueryFunctionMixins} from './function';
@@ -49,7 +49,7 @@ export interface ShelfFieldDef {
   stack?: StackOffset;
   legend?: Legend;
 
-  sort?: SortOrder | SortField;
+  sort?: SortOrder | EncodingSortField<string>;
   type?: ExpandedType;
 
   /**
